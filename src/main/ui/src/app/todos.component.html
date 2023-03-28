@@ -14,7 +14,7 @@
         <td>{{undoneTodo.id}}</td>
         <td><input type="checkbox" id="undoneTodoStatus" name="done"
                    [(ngModel)]="undoneTodo.done"
-                   (change)="updateSatus(undoneTodo.id, true)"></td>
+                   (change)="updateSatus(undoneTodo, true)"></td>
         <td>{{undoneTodo.title}}</td>
         <td>{{undoneTodo.description}}</td>
       </tr>
@@ -22,7 +22,7 @@
         <td>{{doneTodo.id}}</td>
         <td><input type="checkbox" id="doneTodoStatus" name="done"
                    [(ngModel)]="doneTodo.done"
-                   (change)="updateSatus(doneTodo.id, false)"></td>
+                   (change)="updateSatus(doneTodo, false)"></td>
         <td>{{doneTodo.title}}</td>
         <td>{{doneTodo.description}}</td>
       </tr>

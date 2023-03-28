@@ -14,11 +14,18 @@ export class TodosComponent implements OnInit {
   doneTodos: any[] = [];
   undoneTodos: any[] = [];
 
-  updateSatus(todoId: number, newStatus: boolean) {
-    console.log("update status:", todoId, "to:", newStatus);
-    this.appService.updateTodo(todoId, newStatus).subscribe(res => {});;
-    // Remove from previous list
-    // Add to new list
+  updateSatus(updatedTodo: any, newStatus: boolean) {
+    this.appService.updateTodo(updatedTodo.id, newStatus).subscribe(res => {});
+    updatedTodo.done = newStatus;
+
+    // Change list display
+    if (newStatus) {
+      this.undoneTodos = this.undoneTodos.filter(td => td.id != updatedTodo.id);
+      this.doneTodos.unshift(updatedTodo);
+    } else {
+      this.doneTodos = this.doneTodos.filter(td => td.id != updatedTodo.id);
+      this.undoneTodos.unshift(updatedTodo);
+    }
   }
 
   ngOnInit(): void {
