@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { DisplayBoardComponent } from './display-board.component';
-import { UsersComponent } from './users.component';
+import { TodosComponent } from './todos.component';
 import { environment } from '../environments/environment';
 
 // state related imports
@@ -23,7 +23,7 @@ import { environment } from '../environments/environment';
     AppComponent,
     HeaderComponent,
     DisplayBoardComponent,
-    UsersComponent
+    TodosComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +31,7 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     /**
      * StoreModule.forRoot is imported once in the root module, accepting a reducer
      * function or object map of reducer functions. If passed an object of
@@ -38,14 +39,14 @@ import { environment } from '../environments/environment';
      * meta-reducer. This returns all providers for an @ngrx/store
      * based application.
 
-    StoreModule.forRoot(reducers, { metaReducers }),
+     StoreModule.forRoot(reducers, { metaReducers }),
 
-    /**
+     /**
      * @ngrx/router-store keeps router state up-to-date in the store.
 
-    StoreRouterConnectingModule,
+     StoreRouterConnectingModule,
 
-    /**
+     /**
      * Store devtools instrument the store retaining past versions of state
      * and recalculating new states. This enables powerful time-travel
      * debugging.
@@ -57,7 +58,7 @@ import { environment } from '../environments/environment';
 
      !environment.production ? StoreDevtoolsModule.instrument() : [],
 
-    /**
+     /**
      * EffectsModule.forRoot() is imported once in the root module and
      * sets up the effects class to be initialized immediately when the
      * application starts.

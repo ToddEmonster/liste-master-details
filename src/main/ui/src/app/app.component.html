@@ -7,11 +7,11 @@
         <div class="row">
           <div class="form-group col-md-6">
             <label for="exampleInputEmail1">First Name</label>
-            <input type="text" class="form-control" formControlName="firstName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
+            <input type="text" class="form-control" formControlName="firstName" id="exampleInputFirstName1" aria-describedby="emailHelp" placeholder="First Name">
           </div>
           <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Last Name</label>
-            <input type="text" class="form-control" formControlName="lastName" id="exampleInputPassword1" placeholder="Last Name">
+            <input type="text" class="form-control" formControlName="lastName" id="exampleInputLastName1" placeholder="Last Name">
           </div>
         </div>
         <div class="row">
@@ -33,5 +33,5 @@
   </div>
 </div>
 <div class="mrgnbtm">
-  <app-users *ngIf="users.length !== 0" [users]="users"></app-users>
+  <app-todos *ngIf="todos.length !== 0" [todos]="todos"></app-todos>
 </div>
