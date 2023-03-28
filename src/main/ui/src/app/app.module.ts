@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { DisplayBoardComponent } from './display-board.component';
 import { TodosComponent } from './todos.component';
 import { environment } from '../environments/environment';
+import {TodoComponent} from "./todo.component";
 
 // state related imports
 // import { StoreModule } from '@ngrx/store';
@@ -23,7 +24,8 @@ import { environment } from '../environments/environment';
     AppComponent,
     HeaderComponent,
     DisplayBoardComponent,
-    TodosComponent
+    TodosComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
