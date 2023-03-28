@@ -1,5 +1,13 @@
 <div class="container">
-    <h2>{{ todo.title }}</h2>
-    <span>Description</span>
-    <div class="card">{{ todo.description }}</div>
+    <ng-container *ngIf="todo !== null; else noTodoWithId;">
+        <h2>{{ todo.title }}</h2>
+        <span>Description</span>
+        <div class="card">{{ todo.description }}</div>
+    </ng-container>
+    <ng-template #noTodoWithId>
+        <p class="text-error">Aucun todo associé à l'id "{{ id }}"</p>
+    </ng-template>
+    <div class="btn">
+        <button class="btn btn-warning" (click)="goBackToMain()">Go back to All Todos</button>
+    </div>
 </div>
