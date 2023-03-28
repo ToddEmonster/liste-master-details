@@ -27,6 +27,14 @@ public class TodoController {
         return ResponseEntity.ok(resource);
     }
 
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateTodoStatus(@PathVariable Integer id, @RequestBody String newStatus) {
+        log.info("TodoController:  update todo status");
+        Todo resource = todoService.updateTodoStatus(id, Boolean.parseBoolean(newStatus));
+        return ResponseEntity.ok(resource);
+    }
+
     @PostMapping(path = TodoLinks.ADD_TODO)
     public ResponseEntity<?> saveTodo(@RequestBody Todo todo) {
         log.info("TodoController:  save todo");

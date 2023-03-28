@@ -13,7 +13,7 @@ public class Todo {
 
     @Id
     @Column
-    private long id;
+    private int id;
 
     @Column
     @NotNull(message="{NotNull.Todo.title}")

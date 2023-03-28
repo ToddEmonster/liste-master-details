@@ -20,8 +20,8 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
-    public Todo checkTodo(Integer id, boolean newStatus) {
-        Optional<Todo> todo = todoRepository.findById(id);
+    public Todo updateTodoStatus(Integer id, boolean newStatus) {
+        Optional<Todo> todo = todoRepository.findById(Math.toIntExact(id));
         // TOEVOL
         if (todo.isPresent()) {
             Todo updatedTodo = todo.get();

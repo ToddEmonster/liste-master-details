@@ -1,3 +1,6 @@
 .done {
-    color: red;
+    background-color: whitesmoke;
+    color: darkslategrey;
+    font-style: italic;
+    text-decoration: line-through;
 }

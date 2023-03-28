@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {AppService} from "./app.service";
 
 @Component({
   selector: 'app-todos',
@@ -6,12 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-  constructor() { }
+  constructor(private appService: AppService) { }
 
   @Input() todos: any[];
 
   doneTodos: any[] = [];
   undoneTodos: any[] = [];
+
+  updateSatus(todoId: number, newStatus: boolean) {
+    console.log("update status:", todoId, "to:", newStatus);
+    this.appService.updateTodo(todoId, newStatus).subscribe(res => {});;
+    // Remove from previous list
+    // Add to new list
+  }
 
   ngOnInit(): void {
     if (this.todos.length > 0) {
