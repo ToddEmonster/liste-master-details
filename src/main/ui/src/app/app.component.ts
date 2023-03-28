@@ -21,6 +21,8 @@ export class AppComponent implements OnDestroy {
     email: new FormControl('', Validators.nullValidator && Validators.required)
   });
 
+  todos: any[] = [];
+  todoCount = 0;
   users: any[] = [];
   userCount = 0;
 
@@ -32,6 +34,14 @@ export class AppComponent implements OnDestroy {
       this.userCount = this.userCount + 1;
       console.log(this.userCount);
       this.userForm.reset();
+    });
+  }
+
+  getAllTodos() {
+    this.appService.getTodos().pipe(takeUntil(this.destroy$)).subscribe((todos: any[]) => {
+      this.todoCount = todos.length;
+      this.todos = todos;
+      console.log(this.todos);
     });
   }
 
@@ -48,6 +58,7 @@ export class AppComponent implements OnDestroy {
   }
 
   ngOnInit() {
-	this.getAllUsers();
+	  this.getAllUsers();
+    this.getAllTodos();
   }
 }

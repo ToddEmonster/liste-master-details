@@ -10,6 +10,16 @@ export class AppService {
 
   rootURL = '/api';
 
+  getTodos() {
+    return this.http.get(this.rootURL + '/todos');
+  }
+
+  // TODO : create Todo entity class
+  addTodo(todo: any, id: number) {
+    todo.id = id;
+    return this.http.post(this.rootURL + '/todo', todo);
+  }
+
   getUsers() {
     return this.http.get(this.rootURL + '/users');
   }
@@ -18,5 +28,6 @@ export class AppService {
 	user.id = id;
 	return this.http.post(this.rootURL + '/user', user);
   }
+
 
 }
