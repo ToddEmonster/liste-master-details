@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 mrgnbtm">
+            <h2>Create Todo</h2>
+            <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="todo-title">Title</label>
+                        <input type="text" class="form-control" formControlName="title" id="todo-title" aria-describedby="title" placeholder="Title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="todo-description">Description (optional)</label>
+                        <textarea type="text" class="form-control" formControlName="description" id="todo-description" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="!todoForm.valid" class="btn btn-danger">Create</button>
+            </form>
+        </div>
+        <div class="col-md-4 mrgnbtm">
+            <app-display-board
+                    [todosCount]="todoCount"
+                    (getTodosEvent)="getAllTodos()"
+            >
+            </app-display-board>
+        </div>
+    </div>
+</div>
+<div class="mrgnbtm">
+    <app-todos *ngIf="todos.length !== 0" [todos]="todos"></app-todos>
+</div>

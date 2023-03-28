@@ -12,19 +12,19 @@
     <tbody>
       <tr class="not-done" *ngFor="let undoneTodo of undoneTodos; let i = index">
         <td>
-          <a target="_blank" href="/api/{{undoneTodo.id}}">{{undoneTodo.id}}</a>
+          <a target="_blank" href="/todo/{{undoneTodo.id}}">{{undoneTodo.id}}</a>
         </td>
         <td>
           <input type="checkbox" id="undoneTodoStatus" name="done"
                    [(ngModel)]="undoneTodo.done"
                    (change)="updateSatus(undoneTodo, true)"></td>
         <td>
-          <a target="_blank" href="/api/{{undoneTodo.id}}">{{undoneTodo.title}}</a>
+          <a target="_blank" href="/todo/{{undoneTodo.id}}">{{undoneTodo.title}}</a>
         </td>
       </tr>
       <tr class="done" *ngFor="let doneTodo of doneTodos; let j = index">
         <td>
-          <a target="_blank" href="/api/{{doneTodo.id}}">{{doneTodo.id}}</a>
+          <a target="_blank" href="/todo/{{doneTodo.id}}">{{doneTodo.id}}</a>
         </td>
         <td>
           <input type="checkbox" id="doneTodoStatus" name="done"
@@ -32,7 +32,7 @@
                    (change)="updateSatus(doneTodo, false)">
         </td>
         <td>
-          <a target="_blank" href="/api/{{doneTodo.id}}">{{doneTodo.title}}</a>
+          <a target="_blank" href="/todo/{{doneTodo.id}}">{{doneTodo.title}}</a>
         </td>
       </tr>
     </tbody>

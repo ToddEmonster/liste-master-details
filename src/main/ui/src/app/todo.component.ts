@@ -7,10 +7,10 @@ import {AppService} from "./app.service";
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  @Input() todoId: number;
   todo: any;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+  }
 
   ngOnInit() {
     console.log("current todo:", this.todo);

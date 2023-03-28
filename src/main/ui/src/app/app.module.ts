@@ -11,6 +11,8 @@ import { DisplayBoardComponent } from './display-board.component';
 import { TodosComponent } from './todos.component';
 import { environment } from '../environments/environment';
 import {TodoComponent} from "./todo.component";
+import {MainPageComponent} from "./main-page.component";
+import {TodoLayoutComponent} from "./todo-layout.component";
 
 // state related imports
 // import { StoreModule } from '@ngrx/store';
@@ -24,7 +26,9 @@ import {TodoComponent} from "./todo.component";
     AppComponent,
     HeaderComponent,
     DisplayBoardComponent,
+    MainPageComponent,
     TodosComponent,
+    TodoLayoutComponent,
     TodoComponent
   ],
   imports: [
