@@ -11,20 +11,29 @@
     </thead>
     <tbody>
       <tr class="not-done" *ngFor="let undoneTodo of undoneTodos; let i = index">
-        <td>{{undoneTodo.id}}</td>
-        <td><input type="checkbox" id="undoneTodoStatus" name="done"
+        <td>
+          <a target="_blank" href="/api/{{undoneTodo.id}}">{{undoneTodo.id}}</a>
+        </td>
+        <td>
+          <input type="checkbox" id="undoneTodoStatus" name="done"
                    [(ngModel)]="undoneTodo.done"
                    (change)="updateSatus(undoneTodo, true)"></td>
-        <td>{{undoneTodo.title}}</td>
-        <td>{{undoneTodo.description}}</td>
+        <td>
+          <a target="_blank" href="/api/{{undoneTodo.id}}">{{undoneTodo.title}}</a>
+        </td>
       </tr>
       <tr class="done" *ngFor="let doneTodo of doneTodos; let j = index">
-        <td>{{doneTodo.id}}</td>
-        <td><input type="checkbox" id="doneTodoStatus" name="done"
+        <td>
+          <a target="_blank" href="/api/{{doneTodo.id}}">{{doneTodo.id}}</a>
+        </td>
+        <td>
+          <input type="checkbox" id="doneTodoStatus" name="done"
                    [(ngModel)]="doneTodo.done"
-                   (change)="updateSatus(doneTodo, false)"></td>
-        <td>{{doneTodo.title}}</td>
-        <td>{{doneTodo.description}}</td>
+                   (change)="updateSatus(doneTodo, false)">
+        </td>
+        <td>
+          <a target="_blank" href="/api/{{doneTodo.id}}">{{doneTodo.title}}</a>
+        </td>
       </tr>
     </tbody>
   </table>
