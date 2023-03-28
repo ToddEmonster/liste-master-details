@@ -1,9 +1,7 @@
 package com.bbtutorials.users.controller;
 
 import com.bbtutorials.users.entity.Todo;
-import com.bbtutorials.users.entity.Users;
 import com.bbtutorials.users.links.TodoLinks;
-import com.bbtutorials.users.links.UserLinks;
 import com.bbtutorials.users.service.TodoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +25,13 @@ public class TodoController {
         return ResponseEntity.ok(resource);
     }
 
+    @GetMapping(path = TodoLinks.SINGLE_TODO + "/{id}")
+    public ResponseEntity<?> getOneTodo(@PathVariable Integer id) {
+        log.info("TodoController: get one todo");
+        Todo resource = todoService.getOneTodo(id).get(); // TODO handle exception
+        return ResponseEntity.ok(resource);
+    }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateTodoStatus(@PathVariable Integer id, @RequestBody String newStatus) {
@@ -35,7 +40,7 @@ public class TodoController {
         return ResponseEntity.ok(resource);
     }
 
-    @PostMapping(path = TodoLinks.ADD_TODO)
+    @PostMapping(path = TodoLinks.SINGLE_TODO)
     public ResponseEntity<?> saveTodo(@RequestBody Todo todo) {
         log.info("TodoController:  save todo");
         Todo resource = todoService.saveTodo(todo);

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class TodoLinks {
 
     public static final String LIST_TODOS = "/todos";
-    public static final String ADD_TODO = "/todo";
+    public static final String SINGLE_TODO = "/todo";
 
 }

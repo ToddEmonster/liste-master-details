@@ -24,6 +24,9 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     console.log("current id:", this.id);
-    console.log("current todo:", this.todo);
+    this.appService.getTodo(this.id).subscribe((todo: any) => {
+      this.todo = todo;
+      console.log("current todo:", this.todo);
+    });
   }
 }

@@ -14,6 +14,10 @@ export class AppService {
     return this.http.get(this.rootURL + '/todos');
   }
 
+  getTodo(id: number) {
+    return this.http.get(this.rootURL + '/todo/' + id);
+  }
+
   // TODO : create Todo entity class
   addTodo(todo: any, id: number) {
     todo.id = id;
