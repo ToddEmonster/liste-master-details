@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, OnChanges} from '@angular/core';
 import {AppService} from "./app.service";
 
 @Component({
@@ -6,7 +6,7 @@ import {AppService} from "./app.service";
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent implements OnInit, OnChanges {
   constructor(private appService: AppService) { }
 
   @Input() todos: any[];
@@ -28,7 +28,16 @@ export class TodosComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  ngOnChanges(): void {
+    console.log("new todos :", this.todos);
+    // Clean lists
+    this.undoneTodos = [];
+    this.doneTodos = [];
+
+    // Refill lists
     if (this.todos.length > 0) {
       this.todos.forEach(todo => {
         if (todo.done) {

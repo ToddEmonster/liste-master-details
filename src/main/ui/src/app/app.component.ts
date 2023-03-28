@@ -15,10 +15,9 @@ export class AppComponent implements OnDestroy {
 
   title = 'angular-nodejs-example';
 
-  userForm = new FormGroup({
-    firstName: new FormControl('', Validators.nullValidator && Validators.required),
-    lastName: new FormControl('', Validators.nullValidator && Validators.required),
-    email: new FormControl('', Validators.nullValidator && Validators.required)
+  todoForm = new FormGroup({
+    title: new FormControl('', Validators.nullValidator && Validators.required),
+    description: new FormControl('', Validators.nullValidator),
   });
 
   todos: any[] = [];
@@ -29,11 +28,11 @@ export class AppComponent implements OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSubmit() {
-    this.appService.addUser(this.userForm.value, this.userCount + 1).pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.appService.addTodo(this.todoForm.value, this.todoCount + 1).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
-      this.userCount = this.userCount + 1;
-      console.log(this.userCount);
-      this.userForm.reset();
+      this.todoCount = this.todoCount + 1;
+      console.log(this.todoForm);
+      this.todoForm.reset();
     });
   }
 
@@ -58,7 +57,7 @@ export class AppComponent implements OnDestroy {
   }
 
   ngOnInit() {
-	  this.getAllUsers();
+	  //this.getAllUsers();
     this.getAllTodos();
   }
 }
