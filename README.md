@@ -8,7 +8,7 @@ The base for this app is a fork from an [example project of angular with java by
 ### 1. Clone the project
 
 ```shell
-git clone git@github.com:ToddEmonster/todo-list.git
+git clone git@github.com:ToddEmonster/liste-master-details.git
 ```
 
 ### 2. Start the FRONT : Run Angular on port 4200
