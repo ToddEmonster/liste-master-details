@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS commitments ;
+DROP TABLE IF EXISTS commitment ;
 
-CREATE TABLE commitments (
+CREATE TABLE commitment (
   ID INT PRIMARY KEY,
   TITLE VARCHAR(250) NOT NULL,
   START_DATE DATE NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE commitments (
   DESCRIPTION VARCHAR(250)
 );
 
-INSERT INTO commitments (ID, TITLE, START_DATE, END_DATE, ASSOCIATION_NAME, ASSOCIATION_LINK, DESCRIPTION) VALUES
+INSERT INTO commitment (ID, TITLE, START_DATE, END_DATE, ASSOCIATION_NAME, ASSOCIATION_LINK, DESCRIPTION) VALUES
   (1, 'Responsable Projet Sud', DATE '2016-09-01', DATE '2016-07-01','Ingénieurs Sans Frontières (ISF)', 'https://www.isf-france.org/', 'Suivi des projets Sud'),
   (2, 'Responsable Communication', DATE '2016-09-01', DATE '2016-07-01','GreenSAT', 'https://greensatagrobiopol.wixsite.com/greensat', 'Création et maintenance du site Wix'),
   (3, 'Responsable Communication', DATE '2016-09-01', DATE '2016-07-01','Impro''Cibo', 'https://www.facebook.com/improcibo.lapage/', 'Communication des événements du club'),
