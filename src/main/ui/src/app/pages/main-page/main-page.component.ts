@@ -28,7 +28,7 @@ export class MainPageComponent implements OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSubmit() {
-    this.appService.addTodo(this.todoForm.value, this.todoCount + 1).pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.appService.addCommitment(this.todoForm.value, this.todoCount + 1).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
       this.todoCount = this.todoCount + 1;
       console.log(this.todoForm);
@@ -37,7 +37,7 @@ export class MainPageComponent implements OnDestroy {
   }
 
   getAllTodos() {
-    this.appService.getTodos().pipe(takeUntil(this.destroy$)).subscribe((todos: any[]) => {
+    this.appService.getCommitments().pipe(takeUntil(this.destroy$)).subscribe((todos: any[]) => {
       this.todoCount = todos.length;
       this.todos = todos;
       console.log(this.todos);
