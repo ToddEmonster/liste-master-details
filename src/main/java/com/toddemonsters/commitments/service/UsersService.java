@@ -1,11 +1,11 @@
-package com.bbtutorials.users.service;
+package com.toddemonsters.commitments.service;
 
 import java.util.List;
 
+import com.toddemonsters.commitments.repository.UsersRepository;
 import org.springframework.stereotype.Component;
 
-import com.bbtutorials.users.entity.Users;
-import com.bbtutorials.users.repository.UsersRepository;
+import com.toddemonsters.commitments.entity.Users;
 
 @Component
 public class UsersService {

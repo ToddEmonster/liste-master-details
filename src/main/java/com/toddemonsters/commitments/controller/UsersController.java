@@ -1,4 +1,4 @@
-package com.bbtutorials.users.controller;
+package com.toddemonsters.commitments.controller;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bbtutorials.users.entity.Users;
-import com.bbtutorials.users.links.UserLinks;
-import com.bbtutorials.users.service.UsersService;
+import com.toddemonsters.commitments.entity.Users;
+import com.toddemonsters.commitments.links.UserLinks;
+import com.toddemonsters.commitments.service.UsersService;
 
 import lombok.extern.slf4j.Slf4j;
 

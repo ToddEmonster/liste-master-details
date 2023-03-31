@@ -1,4 +1,4 @@
-package com.bbtutorials.users;
+package com.toddemonsters.commitments;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

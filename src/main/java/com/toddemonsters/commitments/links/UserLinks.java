@@ -1,4 +1,4 @@
-package com.bbtutorials.users.links;
+package com.toddemonsters.commitments.links;
 
 import org.springframework.stereotype.Component;
 

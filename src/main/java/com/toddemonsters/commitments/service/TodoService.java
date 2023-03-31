@@ -1,7 +1,7 @@
-package com.bbtutorials.users.service;
+package com.toddemonsters.commitments.service;
 
-import com.bbtutorials.users.entity.Todo;
-import com.bbtutorials.users.repository.TodoRepository;
+import com.toddemonsters.commitments.entity.Todo;
+import com.toddemonsters.commitments.repository.TodoRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

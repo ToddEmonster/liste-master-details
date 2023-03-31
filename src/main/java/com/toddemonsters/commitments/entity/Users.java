@@ -1,4 +1,4 @@
-package com.bbtutorials.users.entity;
+package com.toddemonsters.commitments.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

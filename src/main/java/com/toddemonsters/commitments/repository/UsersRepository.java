@@ -1,11 +1,11 @@
-package com.bbtutorials.users.repository;
+package com.toddemonsters.commitments.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import com.bbtutorials.users.entity.Todo;
+import com.toddemonsters.commitments.entity.Users;
 
 @RepositoryRestResource()
-public interface TodoRepository extends JpaRepository<Todo, Integer>, JpaSpecificationExecutor<Todo>, QuerydslPredicateExecutor<Todo> {}
+public interface UsersRepository extends JpaRepository<Users, Integer>, JpaSpecificationExecutor<Users>, QuerydslPredicateExecutor<Users> {}

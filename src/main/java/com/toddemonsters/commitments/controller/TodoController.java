@@ -1,8 +1,8 @@
-package com.bbtutorials.users.controller;
+package com.toddemonsters.commitments.controller;
 
-import com.bbtutorials.users.entity.Todo;
-import com.bbtutorials.users.links.TodoLinks;
-import com.bbtutorials.users.service.TodoService;
+import com.toddemonsters.commitments.entity.Todo;
+import com.toddemonsters.commitments.links.TodoLinks;
+import com.toddemonsters.commitments.service.TodoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
