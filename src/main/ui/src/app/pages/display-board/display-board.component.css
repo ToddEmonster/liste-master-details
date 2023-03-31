@@ -1,11 +1,23 @@
 .display-board {
   width: 100%;
-  background-color: rgb(193, 236, 112);
-  padding: 5%;
+  background-color: white;
+  border: solid 1px #03989E;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  -webkit-box-shadow: -21px 20px 0px 1px #03989E;
+  box-shadow: -21px 20px 0px 1px #03989E;
 }
 
 .number {
-  color: red;
+  color: #01746d;
   font-size: 75px;
   text-align: center;
+}
+
+.btn-blue {
+  background-color: #e1fbff;
 }

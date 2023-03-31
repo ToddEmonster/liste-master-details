@@ -1,3 +1,14 @@
+h2 {
+    padding: 5px 10px;
+    color: #01746d;
+    background-color: rgba(225, 251, 255, 0.5);
+}
+
 .mrgnbtm {
     margin-top: 20px;
+}
+
+.btn-teal:not(:disabled) {
+    background-color: #01746d;
+    color: white;
 }

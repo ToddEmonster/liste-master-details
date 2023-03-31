@@ -1,6 +1,5 @@
-.done {
-    background-color: whitesmoke;
-    color: darkslategrey;
-    font-style: italic;
-    text-decoration: line-through;
+h2 {
+    padding: 5px 10px;
+    color: #01746d;
+    background-color: rgba(225, 251, 255, 0.5);
 }

@@ -1,3 +1,6 @@
+<div class="mrgnbtm">
+    <app-commitments *ngIf="commitments.length !== 0" [commitments]="commitments"></app-commitments>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-7 mrgnbtm">
@@ -16,7 +19,7 @@
                         <textarea type="text" class="form-control" formControlName="description" id="commitment-description" placeholder="Description"></textarea>
                     </div>
                 </div>
-                <button type="submit" [disabled]="!commitmentForm.valid" class="btn btn-danger">Create</button>
+                <button type="submit" [disabled]="!commitmentForm.valid" class="btn btn-teal">Create</button>
             </form>
         </div>
         <div class="col-md-4 mrgnbtm">
@@ -26,7 +29,4 @@
             </app-display-board>
         </div>
     </div>
-</div>
-<div class="mrgnbtm">
-    <app-commitments *ngIf="commitments.length !== 0" [commitments]="commitments"></app-commitments>
 </div>
