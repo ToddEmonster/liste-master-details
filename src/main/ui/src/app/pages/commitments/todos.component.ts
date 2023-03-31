@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, OnChanges} from '@angular/core';
-import {AppService} from "./app.service";
+import {AppService} from "../../app.service";
 
 @Component({
   selector: 'app-todos',

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TodoComponent} from "./todo.component";
-import {MainPageComponent} from "./main-page.component";
-import {TodoLayoutComponent} from "./todo-layout.component";
+import {TodoComponent} from "./pages/commitment/todo.component";
+import {MainPageComponent} from "./pages/main-page/main-page.component";
+import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
 
 
 const routes: Routes = [

@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from "@angular/core";
-import {AppService} from "./app.service";
+import {AppService} from "../../app.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Subject} from "rxjs";
 import {takeUntil} from "rxjs/operators";

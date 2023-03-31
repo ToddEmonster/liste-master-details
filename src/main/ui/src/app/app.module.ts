@@ -6,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './header/header.component';
-import { DisplayBoardComponent } from './display-board.component';
-import { TodosComponent } from './todos.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { DisplayBoardComponent } from './pages/display-board/display-board.component';
+import { TodosComponent } from './pages/commitments/todos.component';
 import { environment } from '../environments/environment';
-import {TodoComponent} from "./todo.component";
-import {MainPageComponent} from "./main-page.component";
-import {TodoLayoutComponent} from "./todo-layout.component";
+import {TodoComponent} from "./pages/commitment/todo.component";
+import {MainPageComponent} from "./pages/main-page/main-page.component";
+import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
 
 // state related imports
 // import { StoreModule } from '@ngrx/store';
