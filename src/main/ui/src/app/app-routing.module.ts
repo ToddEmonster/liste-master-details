@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TodoComponent} from "./pages/commitment/todo.component";
-import {MainPageComponent} from "./pages/main-page/main-page.component";
-import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
+import {CommitmentComponent} from './pages/commitment/commitment.component';
+import {MainPageComponent} from './pages/main-page/main-page.component';
+import {TodoLayoutComponent} from './layouts/commitment/todo-layout.component';
 
 
 const routes: Routes = [
@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: TodoComponent
+        component: CommitmentComponent
       }
     ]},
   { path: '', redirectTo: '', pathMatch: 'full' },

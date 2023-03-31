@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { DisplayBoardComponent } from './pages/display-board/display-board.component';
-import { TodosComponent } from './pages/commitments/todos.component';
+import { CommitmentsComponent } from './pages/commitments/commitments.component';
 import { environment } from '../environments/environment';
-import {TodoComponent} from "./pages/commitment/todo.component";
+import {CommitmentComponent} from "./pages/commitment/commitment.component";
 import {MainPageComponent} from "./pages/main-page/main-page.component";
 import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
 
@@ -27,9 +27,9 @@ import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
     HeaderComponent,
     DisplayBoardComponent,
     MainPageComponent,
-    TodosComponent,
+    CommitmentsComponent,
     TodoLayoutComponent,
-    TodoComponent
+    CommitmentComponent
   ],
   imports: [
     BrowserModule,

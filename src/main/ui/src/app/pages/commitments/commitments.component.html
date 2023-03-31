@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Todos</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Start date</th>
+        <th>End date</th>
+        <th>Association name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="not-done" *ngFor="let commitment of commitments; let i = index">
+        <td>
+          <a href="/commitment/{{commitment.id}}">{{commitment.title}}</a>
+        </td>
+        <td>
+          {{commitment.startDate}}
+        </td>
+        <td>
+          {{commitment.endDate}}
+        </td>
+        <td>
+          <ng-template *ngIf="commitment.associationLink; else hasNoLink">
+            <a href="{{commitment.associationLink}}">{{commitment.associationName}}</a>
+          </ng-template>
+          <ng-template #hasNoLink>
+            {{commitment.associationName}}
+          </ng-template>
+        </td>
+        <td>
+          {{commitment.description}}
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

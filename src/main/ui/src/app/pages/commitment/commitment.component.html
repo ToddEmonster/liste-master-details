@@ -1,0 +1,13 @@
+<div class="container">
+    <ng-container *ngIf="commitment !== null; else noCommitmentWithId;">
+        <h2>{{ commitment.title }}</h2>
+        <span>Description</span>
+        <div class="card">{{ commitment.description }}</div>
+    </ng-container>
+    <ng-template #noCommitmentWithId>
+        <p class="text-error">No commitment associated with id "{{ id }}"</p>
+    </ng-template>
+    <div class="btn">
+        <button class="btn btn-warning" (click)="goBackToMain()">Go back to All Commitments</button>
+    </div>
+</div>
