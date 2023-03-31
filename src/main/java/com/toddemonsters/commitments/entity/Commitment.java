@@ -29,10 +29,10 @@ public class Commitment {
 
     @Column
     @NotNull(message="{NotNull.Commitments.associationName}")
-    private Date associationName;
+    private String associationName;
 
     @Column
-    private Date associationLink;
+    private String associationLink;
 
     @Column
     private String description;
