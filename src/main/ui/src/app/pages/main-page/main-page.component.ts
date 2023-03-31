@@ -1,53 +1,44 @@
-import {Component, OnDestroy} from "@angular/core";
-import {AppService} from "../../app.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Subject} from "rxjs";
-import {takeUntil} from "rxjs/operators";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AppService} from '../../app.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.css']
 })
-export class MainPageComponent implements OnDestroy {
+export class MainPageComponent implements OnInit, OnDestroy {
 
   constructor(private appService: AppService) {}
 
   title = 'angular-nodejs-example';
 
-  todoForm = new FormGroup({
+  commitmentForm = new FormGroup({
     title: new FormControl('', Validators.nullValidator && Validators.required),
     description: new FormControl('', Validators.nullValidator),
   });
 
-  todos: any[] = [];
-  todoCount = 0;
-  users: any[] = [];
-  userCount = 0;
+  commitments: any[] = [];
+  commitmentsCount = 0;
 
   destroy$: Subject<boolean> = new Subject<boolean>();
 
   onSubmit() {
-    this.appService.addCommitment(this.todoForm.value, this.todoCount + 1).pipe(takeUntil(this.destroy$)).subscribe(data => {
+    this.appService.addCommitment(this.commitmentForm.value, this.commitmentsCount + 1).pipe(takeUntil(this.destroy$)).subscribe(data => {
       console.log('message::::', data);
-      this.todoCount = this.todoCount + 1;
-      console.log(this.todoForm);
-      this.todoForm.reset();
+      this.commitmentsCount = this.commitmentsCount + 1;
+      console.log(this.commitmentForm);
+      this.commitmentForm.reset();
     });
   }
 
   getAllTodos() {
     this.appService.getCommitments().pipe(takeUntil(this.destroy$)).subscribe((todos: any[]) => {
-      this.todoCount = todos.length;
-      this.todos = todos;
-      console.log(this.todos);
-    });
-  }
-
-  getAllUsers() {
-    this.appService.getUsers().pipe(takeUntil(this.destroy$)).subscribe((users: any[]) => {
-      this.userCount = users.length;
-      this.users = users;
+      this.commitmentsCount = todos.length;
+      this.commitments = todos;
+      console.log(this.commitments);
     });
   }
 
@@ -57,7 +48,6 @@ export class MainPageComponent implements OnDestroy {
   }
 
   ngOnInit() {
-    //this.getAllUsers();
     this.getAllTodos();
   }
 }

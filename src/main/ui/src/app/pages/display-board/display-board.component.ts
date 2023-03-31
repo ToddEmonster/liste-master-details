@@ -9,14 +9,14 @@ export class DisplayBoardComponent implements OnInit {
 
   constructor() { }
 
-  @Input() todosCount = 0;
-  @Output() getTodosEvent = new EventEmitter();
+  @Input() commitmentsCount = 0;
+  @Output() getCommitmentsEvent = new EventEmitter();
 
   ngOnInit(): void {
   }
 
-  getAllTodos() {
-    this.getTodosEvent.emit('get all todos');
+  getAllCommitments() {
+    this.getCommitmentsEvent.emit('get all commitments');
   }
 
 }
