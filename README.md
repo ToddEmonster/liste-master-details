@@ -1,7 +1,8 @@
-# Todo List
+# Association Commitments : Liste Master-Details
 
 The base for this app is a fork from an [example project of angular with java by Bhargav Bachina](https://medium.com/bb-tutorials-and-thoughts/how-to-develop-and-build-angular-app-with-java-backend-87fb603c6e17)
 
+Check tables on [the H2 console](http://localhost:8080/h2-console)
 
 ## How to start the project on your local machine
 
