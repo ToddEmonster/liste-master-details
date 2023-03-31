@@ -7,7 +7,7 @@ import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
-  { path: 'todo/:id',
+  { path: 'commitment/:id',
     component: TodoLayoutComponent,
     children: [
       {
