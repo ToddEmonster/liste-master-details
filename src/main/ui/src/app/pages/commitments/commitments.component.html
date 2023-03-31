@@ -16,15 +16,15 @@
           <a href="/commitment/{{commitment.id}}">{{commitment.title}}</a>
         </td>
         <td>
-          {{commitment.startDate}}
+          {{commitment.startDate | date:'MMMM yyyy' }}
         </td>
         <td>
-          {{commitment.endDate}}
+          {{commitment.endDate | date:'MMMM yyyy'}}
         </td>
         <td>
-          <ng-template *ngIf="commitment.associationLink; else hasNoLink">
-            <a href="{{commitment.associationLink}}">{{commitment.associationName}}</a>
-          </ng-template>
+          <ng-container *ngIf="commitment.associationLink !== null; else hasNoLink">
+            <a href="{{commitment.associationLink}}" target="_blank">{{commitment.associationName}}</a>
+          </ng-container>
           <ng-template #hasNoLink>
             {{commitment.associationName}}
           </ng-template>
