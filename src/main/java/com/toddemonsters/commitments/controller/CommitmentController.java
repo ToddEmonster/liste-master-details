@@ -27,7 +27,7 @@ public class CommitmentController {
     @GetMapping(path = CommitmentLinks.SINGLE_COMMITMENT + "/{id}")
     public ResponseEntity<Commitment> getOneCommitment(@PathVariable Integer id) {
         log.info("CommitmentController: get one commitment");
-        Commitment resource = commitmentService.getOneCommitment(id).get(); // COMMITMENT handle exception
+        Commitment resource = commitmentService.getOneCommitment(id).get(); // TODO handle exception
         return ResponseEntity.ok(resource);
     }
 
