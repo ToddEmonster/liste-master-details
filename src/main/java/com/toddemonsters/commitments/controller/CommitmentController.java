@@ -16,26 +16,25 @@ import java.util.List;
 public class CommitmentController {
 
     @Autowired
-    CommitmentService todoService;
+    CommitmentService commitmentService;
 
     @GetMapping(path = CommitmentLinks.LIST_COMMITMENTS)
-    public ResponseEntity<?> listCommitments() {
-        log.info("CommitmentController: list todos");
-        List<Commitment> resource = todoService.getAllCommitments();
+    public ResponseEntity<List<Commitment>> listCommitments() {
+        List<Commitment> resource = commitmentService.getAllCommitments();
         return ResponseEntity.ok(resource);
     }
 
     @GetMapping(path = CommitmentLinks.SINGLE_COMMITMENT + "/{id}")
-    public ResponseEntity<?> getOneCommitment(@PathVariable Integer id) {
-        log.info("CommitmentController: get one todo");
-        Commitment resource = todoService.getOneCommitment(id).get(); // COMMITMENT handle exception
+    public ResponseEntity<Commitment> getOneCommitment(@PathVariable Integer id) {
+        log.info("CommitmentController: get one commitment");
+        Commitment resource = commitmentService.getOneCommitment(id).get(); // COMMITMENT handle exception
         return ResponseEntity.ok(resource);
     }
 
     @PostMapping(path = CommitmentLinks.SINGLE_COMMITMENT)
-    public ResponseEntity<?> saveCommitment(@RequestBody Commitment todo) {
-        log.info("CommitmentController:  save todo");
-        Commitment resource = todoService.saveCommitment(todo);
+    public ResponseEntity<Commitment> saveCommitment(@RequestBody Commitment commitment) {
+        log.info("CommitmentController:  save commitment");
+        Commitment resource = commitmentService.saveCommitment(commitment);
         return ResponseEntity.ok(resource);
     }
 }
