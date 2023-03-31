@@ -30,7 +30,7 @@ export class AppService {
   }
 
   getCommitment(id: number): Observable<Commitment> {
-    return this.http.get<Commitment>(`${this.rootURL}/${id}`).pipe(
+    return this.http.get<Commitment>(`${this.rootURL}/commitment/${id}`).pipe(
       catchError(this.errorHandler.handleHttpError),
       map(data => new Commitment().deserialize(data))
     );
