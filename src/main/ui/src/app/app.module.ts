@@ -12,7 +12,7 @@ import { CommitmentsComponent } from './pages/commitments/commitments.component'
 import { environment } from '../environments/environment';
 import {CommitmentComponent} from "./pages/commitment/commitment.component";
 import {MainPageComponent} from "./pages/main-page/main-page.component";
-import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
+import {CommitmentLayoutComponent} from "./layouts/commitment/commitment-layout.component";
 
 // state related imports
 // import { StoreModule } from '@ngrx/store';
@@ -28,7 +28,7 @@ import {TodoLayoutComponent} from "./layouts/commitment/todo-layout.component";
     DisplayBoardComponent,
     MainPageComponent,
     CommitmentsComponent,
-    TodoLayoutComponent,
+    CommitmentLayoutComponent,
     CommitmentComponent
   ],
   imports: [

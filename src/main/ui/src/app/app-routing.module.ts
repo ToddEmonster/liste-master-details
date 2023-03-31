@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {CommitmentComponent} from './pages/commitment/commitment.component';
 import {MainPageComponent} from './pages/main-page/main-page.component';
-import {TodoLayoutComponent} from './layouts/commitment/todo-layout.component';
+import {CommitmentLayoutComponent} from './layouts/commitment/commitment-layout.component';
 
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'commitment/:id',
-    component: TodoLayoutComponent,
+    component: CommitmentLayoutComponent,
     children: [
       {
         path: '',
