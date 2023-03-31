@@ -14,7 +14,7 @@ export class AppService {
 
   rootURL = '/api';
 
-  getCommitments(): Observable<Commitment[]> {
+  getCommitments(): Observable<any> {
     return this.http
       .get(this.rootURL + '/commitments', {
         observe: 'response'
@@ -23,9 +23,9 @@ export class AppService {
         // Permet de vérifier qu'on a code 200 + aucune exception n'a été levée
         catchError(this.errorHandler.handleHttpError),
         // Extraire le body
-        map(response => response.body),
+        map(response => response.body)
         // Instancier correctement les documents à partir des "objets" fournis par Angular
-        map((liste: any) => liste.map(element => new Commitment().deserialize(element)))
+        // map((liste: any) => liste.map(element => new Commitment().deserialize(element)))
       );
   }
 
