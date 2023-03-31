@@ -3,3 +3,13 @@ h2 {
     color: #01746d;
     background-color: rgba(225, 251, 255, 0.5);
 }
+
+thead tr {
+    background-color: #313638;
+    color: white;
+}
+
+thead th, tbody td {
+    vertical-align: middle;
+    text-align: center;
+}
